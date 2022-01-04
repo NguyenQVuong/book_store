@@ -1,0 +1,26 @@
+1. Write a small calculate how strong the password is:
+ A strong password is:
+ a. Minimum 8 characters in length
+ b. Meter at least 3 of 4 following rules:
+    - Have a least 1 uppercase letters in password
+    - Have a least 1 lowercase letters in password
+    - Have a least 1 number in password
+    - Have a least 1 symbol in password
+
+Meter is:
+    - Weak: it doesn't meet both <a> and <b> criteria
+    - Medium: it meet <a> or <b> criteria
+    - Strong: it meet <a> and <b> criteria
+
+2. Api Sum of awesome numbers from zero to max
+Build an RESTful API server that support a Api
+The awesome number is a number which can be  divided 7 or 3. API receives a Max number from body of 
+request then calculates total of awesome numbers and returns in JSON body
+
+
+
+3. 
+a/ Write SQL to find all employees who is male:
+	SELECT * FROM public.emplyees WHERE gender = 'M';
+b/ Write SQL to find all employees who has the word 'Mike' in their name
+	SELECT first_name, last_name FROM public.employees WHERE first_name = 'Mike' OR last_name = 'Mike'

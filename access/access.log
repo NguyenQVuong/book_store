@@ -1,0 +1,5 @@
+::1 - - [08/Dec/2021:14:26:42 +0000] "GET /san-pham HTTP/1.1" 200 36024 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+::1 - - [08/Dec/2021:14:26:42 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:3000/san-pham" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+::1 - - [09/Dec/2021:13:43:27 +0000] "GET /products HTTP/1.1" 200 36024 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+::1 - - [09/Dec/2021:13:43:27 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:3000/products" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+::1 - - [09/Dec/2021:13:43:40 +0000] "GET /products HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"

@@ -1,0 +1,4 @@
+trang chủ local cũng như trang ./product.
+đường dẫn qua trang chi tiết: ./product/tên-sản-phẩm
+
+khi bỏ chi tiết sản phẩm: ./product/tên-sản-phẩm -> ./product thì thực hiện redirect về trang local
