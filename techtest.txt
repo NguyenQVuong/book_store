@@ -21,6 +21,6 @@ request then calculates total of awesome numbers and returns in JSON body
 
 3. 
 a/ Write SQL to find all employees who is male:
-	SELECT * FROM public.emplyees WHERE gender = 'M';
+	SELECT * FROM public.employees WHERE gender = 'M';
 b/ Write SQL to find all employees who has the word 'Mike' in their name
 	SELECT first_name, last_name FROM public.employees WHERE first_name = 'Mike' OR last_name = 'Mike'

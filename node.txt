@@ -2,3 +2,49 @@ trang chủ local cũng như trang ./product.
 đường dẫn qua trang chi tiết: ./product/tên-sản-phẩm
 
 khi bỏ chi tiết sản phẩm: ./product/tên-sản-phẩm -> ./product thì thực hiện redirect về trang local
+
+thực hiện phân trang khi truy cập đến localhost: localhost:3000.
+thực hiện query : {page, size} = req.query 
+- page if(!page) {page =1} (nếu không truy vấn trang sẽ trả về trang 1)
+- size if(!size) {size = 10} (1 trang có 10 sp)
+
+- const limit = parseInt(size) //phai la so nguyen 
+
+thực hiện truy vấn: db.<collection>.find().
+sap xep theo id: (_id: -1) // sap xep theo moi nhat
+example
+router.get('',(req, res)=> {
+	const page = parseInt(req.query.page);
+	if(!page) {page =1}
+	const pageSize = 10;
+	const skip = (page -1) * pageSize;
+	Products.find().skip(skip).limit(size).then(data => {
+		Products.countDocuments({}).then((total) => {
+	let totalPage = Math.ceil(total/size)});
+res.json(total, totalPage; totalPage, data: data)
+	)
+})
+	})
+})
+
+
+	example:
+router.get('/', (req, res, next)=>{
+  let perPage = 16; // số lượng sản phẩm xuất hiện trên 1 page
+  let page = req.params.page || 1; 
+
+  Product
+    .find() // find tất cả các data
+    .skip((perPage * page) - perPage) // Trong page đầu tiên sẽ bỏ qua giá trị là 0
+    .limit(perPage)
+    .exec((err, products) => {
+      Product.countDocuments((err, count) => { // đếm để tính xem có bao nhiêu trang
+        if (err) return next(err);
+        res.render('product/index_product', {
+          products, // sản phẩm trên một page
+          current: page, // page hiện tại
+          pages: Math.ceil(count / perPage) // tổng số các page
+        });
+      });
+    });
+})

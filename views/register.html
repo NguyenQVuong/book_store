@@ -1,126 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Store Register</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <style>
-    *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    }
-
-    #header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 46px;
-     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    z-index: 1;
-}
-
-#nav {
-    display: inline-block;
-}
-
-#nav, .subnav {
-    list-style: none; /* bo dau cham the li */
-}
-
-#nav > li {
-    display: inline-block;
-
-}
-
-#nav li {
-    position: relative;
-}
-
-#nav li:hover .subnav{
-    display: block;
-}
-
-#nav > li > a{
-    color: #fff;
-    text-transform: uppercase;
-}
-
-#nav li a {
-    text-decoration: none;
-    line-height: 46px;
-    padding: 0 24px;
-    display: block;
-/*     hoac display: inline-block; width: 100%;
- */}
-
-#nav .subnav li:hover a,
-#nav > li:hover > a {
-    color: #000;
-    background-color: #ccc;
-}
-
-#nav .subnav{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 160px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#nav .subnav a {
-    color: #000;
-    padding: 0 12px;
-    line-height: 38px;
-}
-#nav .nav-arrow-down{
-    font-size: 14px;
-}
-
-
-#header .search-btn {
-    float: right;
-    padding: 0 21px;
-}
-
-#header .search-btn:hover {
-    cursor: pointer;
-    background-color: #f44336;
-}
-
-#header .search-icon {
-    color: #fff;
-    font-size: 20px;
-    line-height: 46px;
-}
-</style>
-</head>
-<body>  
+<html>
+    <head>
+        <title>Sign in</title>
+        <meta charset="utf-8"> 
+        <link rel="stylesheet" href="../public/css/register.css">
+    </head>
+    <body>
+        
     <div id="main">
         <div id="header">
             <!-- Begin nav -->
             <ul id="nav">
                 <li><a href="#">Home</a></li>
-                <li><a href="#band">Cart</a></li>
-                <li><a href="#tour">Orders</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                         <i class="nav-arrow-down ti-angle-down"></i>                       
                     </a>
                     <ul class="subnav">
-                        <li><a href="#">Notifications</a></li>
-                        <li><a href="#">Sale</a></li>
-                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>
                 </li>
             </ul>
@@ -128,12 +31,55 @@
 
             <!-- Begin search button -->
             <div class="search-btn">
-                <i class="material-icons">search</i>
+                <i class="search-icon ti-search"></i>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <div class="menu-icon ti-menu"></div>
             </div>
             <!-- End search button -->
 
         </div>
-    </div>
+        <div>
+                <header class="modal-header">
+                    <!-- <i class="modal-heading-icon ti-bag"></i> -->
+                    Đăng kí
+                </header>
     
-</body>
+                <div class="modal-body">
+                    <!-- <label class="modal-label"> -->
+                    <!-- Username -->
+                    <form action="./dang-ki" method="post">
+                    </label>
+                    <!-- <input type="text" class="modal-input"> -->
+                    <input id="sso_account" type="text" placeholder="Tên truy cập" autocorrect="off" autocapitalize="off">
+                    <!-- để icon -->
+                    <label class="modal-label">
+                        <i class="ti-user"></i> 
+                    <!-- Email -->
+                    </label>
+                    <input id="sso_account" type="email" placeholder="Email" autocorrect="off" autocapitalize="off">
+
+                    <!-- <input id="sso_account" type="email" class="modal-input"> -->
+                    <!-- Password -->
+                    </label>
+                    <input id="sso_account" type="text" placeholder="Mật khẩu" autocorrect="off" autocapitalize="off">
+
+                    <!-- <input id="sso_account" type="text" class="modal-input"> -->
+
+                    <!-- Confirm Password -->
+                    </label>
+                    <input id="sso_account" type="text" placeholder="Nhập lại mật khẩu" autocorrect="off" autocapitalize="off">
+
+                    <!-- <input id="sso_account" type="text" class="modal-input"> -->
+    
+                    <button id="submit">
+                    Đăng kí 
+                    </button>
+                    </form>
+                    
+                </div>
+        </div>
+            
+    </body>
 </html>

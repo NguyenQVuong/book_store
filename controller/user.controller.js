@@ -55,29 +55,38 @@ class UserController {
     };
     
     async loginUser(req, res) {
-        let error = loginSchema.validate(req.body);
-        if(error) {
-            console.log("loi:", error);
-        }       
+        // let error = loginSchema.validate(req.body);
+        // if(error) {
+        //     console.log("loi:", error);
+        // }       
         try{
             const user = await User.findOne({email: req.body.email})   
             if(!user) {
                     return res.send("email not found");
                 };
                 const checkPassword = await bcrypt.compareSync(req.body.password, user.password);
-                        if(!checkPassword) {
-                            return res.send("password was wrong").redirect('/dang-nhap')
-                        }
-                        else {
-                            const token = jwt.sign({ _id: user._id }, 'nguyenvuong', {
-                                expiresIn: '30m',
-                            });
-                                res.header('auth-token', token).send(token);
-                        }
+                    if(!checkPassword) {
+                        return res.send("password was wrong").redirect('/dang-nhap')
+                    }
+                    else {
+                        const token = jwt.sign({ _id: user._id }, 'nguyenvuong', {
+                            expiresIn: '30m',
+                        });
+                            res.header('auth-token', token).send(token);
+                }
         }
         catch(err){
             res.send(err)
         }
+    }
+
+    async confimPassword(req, res) {
+
+    }
+
+    async logOut(req, res) {
+        res.cookie('auth-token','', {maxAge: 1});
+        res.send('logout')
     }
 }
 module.exports = new UserController;
